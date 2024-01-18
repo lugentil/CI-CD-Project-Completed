@@ -4,6 +4,7 @@ pipeline{
     }
     environment{
         APP_NAME = "complete-prodcution-e2e-pipeline"
+        SSH_CREDENTIALS = credentials('github-ssh')
             }
     stages{
         stage("Cleanup Workspace"){
@@ -33,7 +34,7 @@ pipeline{
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
                 """
-                withCredentials([gitUsernamePassword(credentialsId: 'github-ssh', gitToolName: 'Default')]){
+                sshagent(credentials: [SSH_CREDENTIALS]){
                     sh "git push https://github.com/lugentil/CI-CD-Project-Completed main"
                 }
             }
