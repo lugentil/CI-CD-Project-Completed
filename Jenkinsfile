@@ -32,7 +32,6 @@ pipeline{
                     git config --global user.email "lugentil01@gmail.com"
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
-                    ssh-keygen -R github.com
                 """
                 sshagent(credentials: ['github-ssh']){
                 sh """
