@@ -33,7 +33,7 @@ pipeline{
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
                 """
-                withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'Default')]){
+                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]){
                     sh "git push https://github.com/lugentil/CI-CD-Project-Completed main"
                 }
             }
