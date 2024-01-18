@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: complete-prodcution-e2e-app
-          image: lugentil/complete-prodcution-e2e-pipeline:1.0.0-68
+          image: lugentil/complete-prodcution-e2e-pipeline:1.0.0-69
           resouces:
             limits:
               memory: "256Mi"
