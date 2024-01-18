@@ -32,11 +32,12 @@ pipeline{
                     git config --global user.email "lugentil01@gmail.com"
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
+                    ssh-keyscan -R github.com
+                    ssh-keyscan github.com >> ~/.ssh/known_hosts
+
                 """
                 sshagent(credentials: ['github-ssh']){
                 sh """
-                    ssh-keyscan -R github.com
-                    ssh-keyscan github.com >> ~/.ssh/known_hosts
                     git push git@github.com:lugentil/CI-CD-Project-Completed.git main
                 """
                 }
