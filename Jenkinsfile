@@ -34,7 +34,7 @@ pipeline{
                     git commit -m "Updated Deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'Default')]){
-                    sh "git push git@github.com:lugentil/CI-CD-Project-Completed.git main"
+                    sh "git push https://github.com/lugentil/CI-CD-Project-Completed main"
                 }
             }
         }
