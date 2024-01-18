@@ -13,7 +13,7 @@ pipeline{
         }
         stage("Checkout from SCM"){
             steps{
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/dmancloud/complete-prodcution-e2e-pipeline-github-actions.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/lugentil/CI-CD-Project-Completed'
             }
         }
         stage("Update the Deployment Tags"){
