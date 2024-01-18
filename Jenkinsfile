@@ -33,7 +33,6 @@ pipeline{
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
                     ssh-keygen -R github.com
-                    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
                 """
                 sshagent(credentials: ['github-ssh']){
                 sh """
