@@ -35,7 +35,7 @@ pipeline{
                     git commit -m "Updated Deployment Manifest"
                 """
                 sshagent(credentials: [SSH_CREDENTIALS]){
-                    sh "git push https://github.com/lugentil/CI-CD-Project-Completed main"
+                    sh "git push git@github.com:lugentil/CI-CD-Project-Completed.git main"
                 }
             }
         }
