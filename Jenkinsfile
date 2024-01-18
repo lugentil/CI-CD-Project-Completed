@@ -32,6 +32,7 @@ pipeline{
                     git config --global user.email "lugentil01@gmail.com"
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
+                    sh "cat ~/.ssh/known_hosts"
                     ssh-keyscan -R github.com
                     ssh-keyscan github.com >> ~/.ssh/known_hosts
 
